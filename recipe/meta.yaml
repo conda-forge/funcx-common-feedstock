@@ -1,5 +1,5 @@
 {% set name = "funcx-common" %}
-{% set version = "0.0.22" %}
+{% set version = "0.0.23" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/funcx-common-{{ version }}.tar.gz
-  sha256: 37d20ae874ec51a03d098b36ea6fda712272b43443672d09165082356bcb2151
+  sha256: eb39ac29e63bbb14928c8df94895af82a50baa5d05773fb3241ffb8749090c81
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
