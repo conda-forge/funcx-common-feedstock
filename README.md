@@ -28,6 +28,9 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-funcx--common-green.svg)](https://anaconda.org/conda-forge/funcx-common) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/funcx-common.svg)](https://anaconda.org/conda-forge/funcx-common) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/funcx-common.svg)](https://anaconda.org/conda-forge/funcx-common) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/funcx-common.svg)](https://anaconda.org/conda-forge/funcx-common) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-funcx--common--boto3-green.svg)](https://anaconda.org/conda-forge/funcx-common-boto3) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/funcx-common-boto3.svg)](https://anaconda.org/conda-forge/funcx-common-boto3) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/funcx-common-boto3.svg)](https://anaconda.org/conda-forge/funcx-common-boto3) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/funcx-common-boto3.svg)](https://anaconda.org/conda-forge/funcx-common-boto3) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-funcx--common--moto-green.svg)](https://anaconda.org/conda-forge/funcx-common-moto) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/funcx-common-moto.svg)](https://anaconda.org/conda-forge/funcx-common-moto) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/funcx-common-moto.svg)](https://anaconda.org/conda-forge/funcx-common-moto) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/funcx-common-moto.svg)](https://anaconda.org/conda-forge/funcx-common-moto) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-funcx--common--redis-green.svg)](https://anaconda.org/conda-forge/funcx-common-redis) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/funcx-common-redis.svg)](https://anaconda.org/conda-forge/funcx-common-redis) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/funcx-common-redis.svg)](https://anaconda.org/conda-forge/funcx-common-redis) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/funcx-common-redis.svg)](https://anaconda.org/conda-forge/funcx-common-redis) |
 
 Installing funcx-common
 =======================
@@ -39,16 +42,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `funcx-common` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `funcx-common, funcx-common-boto3, funcx-common-moto, funcx-common-redis` can be installed with `conda`:
 
 ```
-conda install funcx-common
+conda install funcx-common funcx-common-boto3 funcx-common-moto funcx-common-redis
 ```
 
 or with `mamba`:
 
 ```
-mamba install funcx-common
+mamba install funcx-common funcx-common-boto3 funcx-common-moto funcx-common-redis
 ```
 
 It is possible to list all of the versions of `funcx-common` available on your platform with `conda`:
