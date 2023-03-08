@@ -2,7 +2,7 @@
 {% set version = "0.0.25" %}
 
 package:
-  name: {{ name|lower }}
+  name: funcx-common-split
   version: {{ version }}
 
 source:
@@ -10,33 +10,33 @@ source:
   sha256: 006850a91d77cc060238b8afd70782c8a6524cdfbae800307b374985b6f8f8de
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
   number: 1
-  noarch: python
-
-requirements:
-  host:
-    - pip
-    - python >=3.7
-  run:
-    - python >=3.7
-    - pydantic >=1,<2
-  run_constrained:
-    - moto <5
-    - redis-py >=3.5.3,<5
-    - boto3 >=1.19.0
-
-test:
-  imports:
-    - funcx_common
-  commands:
-    - pip check
-  requires:
-    - pip
 
 outputs:
 
   - name: funcx-common
+    script: build-core.sh
+    build:
+      noarch: python
+    requirements:
+      host:
+        - pip
+        - python >=3.7
+      run:
+        - python >=3.7
+        - pydantic >=1,<2
+      run_constrained:
+        - moto <5
+        - redis-py >=3.5.3,<5
+        - boto3 >=1.19.0
+    test:
+      imports:
+        - funcx_common
+      commands:
+        - pip check
+      requires:
+        - pip
+
 
   - name: funcx-common-moto
     build:
@@ -58,9 +58,9 @@ outputs:
     build:
       noarch: generic
     requirements:
-    run:
-      - {{ pin_subpackage('funcx-common', exact=True) }}
-      - boto3
+      run:
+        - {{ pin_subpackage('funcx-common', exact=True) }}
+        - boto3
     test:
       imports:
         - funcx_common
@@ -73,9 +73,9 @@ outputs:
     build:
       noarch: generic
     requirements:
-    run:
-      - {{ pin_subpackage('funcx-common', exact=True) }}
-      - redis
+      run:
+        - {{ pin_subpackage('funcx-common', exact=True) }}
+        - redis-py
     test:
       imports:
         - funcx_common
