@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
@@ -37,7 +37,7 @@ test:
 outputs:
 
   - name: funcx-common
-  
+
   - name: funcx-common-moto
     build:
       noarch: generic
@@ -52,7 +52,7 @@ outputs:
         - pip check
       requires:
         - pip
-        
+
 
   - name: funcx-common-boto3
     build:
