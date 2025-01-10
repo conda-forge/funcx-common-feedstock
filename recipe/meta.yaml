@@ -22,6 +22,7 @@ outputs:
       host:
         - pip
         - python {{ python_min }}
+        - setuptools
       run:
         - python >={{ python_min }}
         - pydantic >=1,<2
