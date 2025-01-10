@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/funcx-common-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/funcx-common-{{ version }}.tar.gz
   sha256: 006850a91d77cc060238b8afd70782c8a6524cdfbae800307b374985b6f8f8de
 
 build:
-  number: 1
+  number: 2
 
 outputs:
 
@@ -21,9 +21,10 @@ outputs:
     requirements:
       host:
         - pip
-        - python >=3.7
+        - python {{ python_min }}
+        - setuptools
       run:
-        - python >=3.7
+        - python >={{ python_min }}
         - pydantic >=1,<2
       run_constrained:
         - moto <5
